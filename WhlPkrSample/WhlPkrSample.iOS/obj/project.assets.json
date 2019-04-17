@@ -19,13 +19,11 @@
           "Xamarin.Forms": "3.6.0"
         },
         "compile": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
@@ -173,13 +171,11 @@
           "Xamarin.Forms": "3.6.0"
         },
         "compile": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
@@ -327,13 +323,11 @@
           "Xamarin.Forms": "3.6.0"
         },
         "compile": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
@@ -481,13 +475,11 @@
           "Xamarin.Forms": "3.6.0"
         },
         "compile": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll": {},
           "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll": {}
@@ -640,11 +632,9 @@
       "path": "vapolia.wheelpicker.forms/3.0.3",
       "files": [
         ".nupkg.metadata",
-        "lib/MonoAndroid41/Vapolia.WheelPickerCore.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerDroid.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerForms.Droid.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerForms.dll",
-        "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll",

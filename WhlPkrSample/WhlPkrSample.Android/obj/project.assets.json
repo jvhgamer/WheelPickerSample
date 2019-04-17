@@ -2,6 +2,26 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.1": {
+      "Karamunting.Android.SuperRabbitD.NumberPicker/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "27.0.2.1",
+          "Xamarin.Kotlin.StdLib": "1.1.4.3"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop",
+          "Mono.Android",
+          "System",
+          "System.Core",
+          "System.Xml"
+        ],
+        "compile": {
+          "lib/monoandroid81/NumberPicker.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid81/NumberPicker.dll": {}
+        }
+      },
       "Vapolia.WheelPicker/3.0.3": {
         "type": "package",
         "compile": {
@@ -19,13 +39,11 @@
           "Xamarin.Forms": "3.6.0"
         },
         "compile": {
-          "lib/MonoAndroid41/Vapolia.WheelPickerCore.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerDroid.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerForms.Droid.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerForms.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid41/Vapolia.WheelPickerCore.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerDroid.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerForms.Droid.dll": {},
           "lib/MonoAndroid41/Vapolia.WheelPickerForms.dll": {}
@@ -369,10 +387,31 @@
           "build/Xamarin.Forms.props": {},
           "build/Xamarin.Forms.targets": {}
         }
+      },
+      "Xamarin.Kotlin.StdLib/1.1.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid/Xamarin.Kotlin.StdLib.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/Xamarin.Kotlin.StdLib.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Karamunting.Android.SuperRabbitD.NumberPicker/1.0.1": {
+      "sha512": "WTKWygumgo66tyTqfNk4hviIJx7m5CnxB1m/ly7oFQw/txklZfHyf2+qZIX7pmU+/XBdqpV0z3zxfC7g1V0y2g==",
+      "type": "package",
+      "path": "karamunting.android.superrabbitd.numberpicker/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "karamunting.android.superrabbitd.numberpicker.1.0.1.nupkg.sha512",
+        "karamunting.android.superrabbitd.numberpicker.nuspec",
+        "lib/monoandroid81/NumberPicker.dll"
+      ]
+    },
     "Vapolia.WheelPicker/3.0.3": {
       "sha512": "s38Dh+pKyOKDaxSPXc5JJMmOw2KZDulQ5um5bHWfVGPBLp8+itQHb7qctjs3IA5I1/POnBwTvdlEqMwk7ilgBQ==",
       "type": "package",
@@ -394,11 +433,9 @@
       "path": "vapolia.wheelpicker.forms/3.0.3",
       "files": [
         ".nupkg.metadata",
-        "lib/MonoAndroid41/Vapolia.WheelPickerCore.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerDroid.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerForms.Droid.dll",
         "lib/MonoAndroid41/Vapolia.WheelPickerForms.dll",
-        "lib/Xamarin.iOS/Vapolia.WheelPickerCore.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerForms.Ios.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerForms.dll",
         "lib/Xamarin.iOS/Vapolia.WheelPickerIos.dll",
@@ -749,6 +786,7 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll.mdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
@@ -846,10 +884,24 @@
         "xamarin.forms.3.6.0.293080.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "Xamarin.Kotlin.StdLib/1.1.4.3": {
+      "sha512": "8zyBsxhymvMG+3GFmxYbgiruj9HYCEo9+ueIgLyn35WEz2kaff0TqqAtm7wtkRBuDfW6NkqT0KhEpvxiq1Ae5w==",
+      "type": "package",
+      "path": "xamarin.kotlin.stdlib/1.1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/MonoAndroid/Xamarin.Kotlin.StdLib.dll",
+        "xamarin.kotlin.stdlib.1.1.4.3.nupkg.sha512",
+        "xamarin.kotlin.stdlib.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.1": [
+      "Karamunting.Android.SuperRabbitD.NumberPicker >= 1.0.1",
       "Vapolia.WheelPicker >= 3.0.3",
       "Vapolia.WheelPicker.Forms >= 3.0.3",
       "Xamarin.Android.Support.Design >= 27.0.2.1",
@@ -899,6 +951,10 @@
     "frameworks": {
       "monoandroid81": {
         "dependencies": {
+          "Karamunting.Android.SuperRabbitD.NumberPicker": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
           "Vapolia.WheelPicker": {
             "target": "Package",
             "version": "[3.0.3, )"

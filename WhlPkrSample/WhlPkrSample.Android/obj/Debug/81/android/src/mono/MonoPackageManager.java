@@ -108,6 +108,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "WhlPkrSample.Android.dll" comes first in this list. */
 		"WhlPkrSample.Android.dll",
 		"FormsViewGroup.dll",
+		"NumberPicker.dll",
 		"Vapolia.WheelPickerCore.dll",
 		"Vapolia.WheelPickerDroid.dll",
 		"Vapolia.WheelPickerForms.dll",
@@ -135,6 +136,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"Xamarin.Kotlin.StdLib.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

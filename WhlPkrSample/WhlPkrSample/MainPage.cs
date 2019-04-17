@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
 using Xamarin.Forms;
 using Vapolia.WheelPickerForms;
+using System;
+using System.Linq;
+using Xamarin.Forms.Platform.Android;
+using Android.Support.V7.View;
+using Android.Views;
 
 #if __IOS__
 using UIKit;
@@ -12,6 +17,8 @@ using Xamarin.Forms.Platform.iOS;
 using Vapolia.WheelPickerCore;
 using Vapolia.WheelPickerForms.Droid;
 using Android.App;
+using WhlPkrSample.PickerView;
+using WhlPkrSample.PickerView.Droid;
 #endif
 
 namespace WhlPkrSample
@@ -22,7 +29,7 @@ namespace WhlPkrSample
         public List<IList<object>> wheelPickerItems;
         public List<object> listDigits, listFooBar, listVowels, listQwerty = new List<object>();
 
-        public View wheelPickerView;
+        public Xamarin.Forms.View wheelPickerView;
         public bool imgViewable = true;
         Button btnClickMe;
         Label lblWelcome;
@@ -33,9 +40,13 @@ namespace WhlPkrSample
         { ShowSelectionIndicator = true, BackgroundColor = UIColor.White };
         public WheelPickerModel pickerViewModel;
 #elif __ANDROID__
+#if Vapolia
         public WheelPicker pickerViewModel = new Vapolia.WheelPickerForms.WheelPicker();
+#elif PickerView
+        public CustomPickerView pickerViewModel = new CustomPickerView();
 #endif
-        #endregion
+#endif
+#endregion
 
         public MainPage()
         {
@@ -57,7 +68,7 @@ namespace WhlPkrSample
                 Text = "Welcome to Xamarin.Forms!",
                 TextColor = Color.Black,
                 BackgroundColor = Color.White,
-                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
             };
@@ -103,6 +114,7 @@ namespace WhlPkrSample
             pickerViewModel.ItemFont = UIFont.SystemFontOfSize(12);
             pickerViewModel.ItemWidths = "15 45 * 30";
 #elif __ANDROID__
+#if Vapolia
             pickerViewModel.HorizontalSpaceBetweenWheels = 20f;
             pickerViewModel.ItemsSourceMulti = wheelPickerItems;
             pickerViewModel.SelectedItemsIndex = new IntegerList { 0, 0, 0, 4 };
@@ -133,21 +145,23 @@ namespace WhlPkrSample
                     RowHeight = 50,
                 },
             };
-            Font font = new Font{};
+            Font font = new Font { };
             font = font.WithSize(Device.GetNamedSize(NamedSize.Small, typeof(Label)));
             pickerViewModel.ItemTextFont = font;
+#endif
+#if PickerView
+            pickerViewModel.FontSize = 24;
+            pickerViewModel.ColumnWidth = 30;
+#endif
 #endif
             #endregion
 
 #if __IOS__
             wheelPickerView = wheelPicker.ToView();
 #elif __ANDROID__
-            wheelPickerView = pickerViewModel;
+           wheelPickerView = pickerViewModel;
 #endif
 
-            wheelPickerView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            wheelPickerView.VerticalOptions = LayoutOptions.FillAndExpand;
-            wheelPickerView.BackgroundColor = Color.White;
 
             var gridImgAndPicker = new Grid
             {
@@ -167,6 +181,9 @@ namespace WhlPkrSample
                 Padding = 0
             };
 
+            wheelPickerView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            wheelPickerView.VerticalOptions = LayoutOptions.FillAndExpand;
+            wheelPickerView.BackgroundColor = Color.White;
             gridImgAndPicker.Children.Add(wheelPickerView, 0, 0);
             gridImgAndPicker.Children.Add(imgPreview, 0, 0);
             #endregion
@@ -235,7 +252,7 @@ namespace WhlPkrSample
 #if __IOS__
                     wheelPicker.Hidden = false;
 #elif __ANDROID__
-                    pickerViewModel.IsVisible = true;
+                    pickerViewModel.IsVisible = false;
 #endif
                     imgPreview.IsVisible = false;
                 }
@@ -266,6 +283,60 @@ namespace WhlPkrSample
 
             if (args.WheelIndex == 3)
             {
+            }
+        }
+        #endregion
+
+        #region Class
+        public class CustomWheelAdapter : 
+            Java.Lang.Object, Android.Support.V7.View.ActionMode.ICallback, SuperRabbit.Lib.IWheelAdapter
+        {
+            public CustomWheelAdapter(List<object> list)
+            {
+                ListItems = list;
+            }
+
+            public List<object> ListItems { get; set; }
+
+            public int MaxIndex { get; set; }
+
+            public int MinIndex { get; set; }
+
+            public string TextWithMaximumLength { get; set; }
+
+            public int GetPosition(string value)
+            {
+                return 0;
+            }
+
+            public string GetValue(int position)
+            {
+                return string.Empty;
+                //Console.WriteLine("GetValue(); pos:" + position);
+                //if (ListItems != null && ListItems.Count >= position)
+                //    return ListItems.ElementAt(position).ToString();
+                //else
+                //    return string.Empty;
+            }
+
+            bool Android.Support.V7.View.ActionMode.ICallback.OnActionItemClicked(Android.Support.V7.View.ActionMode mode, IMenuItem item)
+            {
+                throw new NotImplementedException();
+            }
+
+            bool Android.Support.V7.View.ActionMode.ICallback.OnCreateActionMode(Android.Support.V7.View.ActionMode mode, IMenu menu)
+            {
+                throw new NotImplementedException();
+            }
+
+            void Android.Support.V7.View.ActionMode.ICallback.OnDestroyActionMode(Android.Support.V7.View.ActionMode mode)
+            {
+                throw new NotImplementedException();
+            }
+
+            bool Android.Support.V7.View.ActionMode.ICallback.OnPrepareActionMode(Android.Support.V7.View.ActionMode mode, IMenu menu)
+            {
+                throw new NotImplementedException();
             }
         }
         #endregion

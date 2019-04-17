@@ -1,4 +1,5 @@
 FormsViewGroup
+NumberPicker
 System.Runtime
 Vapolia.WheelPickerCore
 Vapolia.WheelPickerDroid
@@ -27,4 +28,5 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
+Xamarin.Kotlin.StdLib
 netstandard
